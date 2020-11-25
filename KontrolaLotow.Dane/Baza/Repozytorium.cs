@@ -41,16 +41,16 @@ namespace KontrolaLotow.Dane.Baza
 
             return miasto;
         }
-        public Samolot WezSamolot(Miasto miastoWylotu) => 
-            new Samolot("Lot 23513", 900, miastoWylotu);
+        //public Samolot WezSamolot(Miasto miastoWylotu) =>
+        //    new Samolot("Lot 23513", 900, miastoWylotu);
 
-        public Samolot WezSamolot()
-        {
-            Polozenie polozenie = new Polozenie(131, 2255);
-            Samolot samolot = new Samolot("Lot 94124", polozenie);
+        //public Samolot WezSamolot()
+        //{
+        //    Polozenie polozenie = new Polozenie(131, 2255);
+        //    Samolot samolot = new Samolot("Lot 94124", polozenie);
 
-            return samolot;
-        }
+        //    return samolot;
+        //}
 
         public Samolot WezSamolot(int iloscMiejsc, int iloscPasazerow)
         {

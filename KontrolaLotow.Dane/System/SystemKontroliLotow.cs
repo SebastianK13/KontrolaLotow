@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace KontrolaLotow.Dane.System
 {
 
-    public class SystemKontroliLotow
+    public class SystemKontroliLotow: ISystemKontroliLotow
     {
         public SystemKontroliLotow()
         {
@@ -29,10 +29,32 @@ namespace KontrolaLotow.Dane.System
                 (Narzedzia.SzacujCzasDotarcia(sledzonySamolot).ToString() == null ? "brak" :
                 Narzedzia.SzacujCzasDotarcia(sledzonySamolot).ToString()));;
         }
-        public void SledzonySamolot(Samolot samolot)
+        //To powinno zostać? W zadaniu nie zostało sprecyzowane ale ewidentnie interface ma metodę,
+        //która jak można wywnioskować ma robić to samo co metoda SledzonySamolot poza tym ciężko wywołać metode której nie ma
+        //w interface i dla której nie mozna ustworzyć instancji klasy
+        //public void SledzonySamolot(Samolot samolot)
+        //{
+        //    sledzonySamolot = samolot;
+        //    Console.WriteLine("Zarejestrowano " + sledzonySamolot.Identyfikator);
+        //}
+
+        public void ZarejestrujSamolot(Samolot samolot)
         {
             sledzonySamolot = samolot;
             Console.WriteLine("Zarejestrowano " + sledzonySamolot.Identyfikator);
+        }
+
+        public void PokazWidok(Widok widok)
+        {
+            switch (widok)
+            {
+                case Widok.ListaSamolotów:
+                    EkranObecnegoStanu();
+                    break;
+                default:
+                    Console.WriteLine("Błąd");
+                    break;
+            }
         }
     }
 }

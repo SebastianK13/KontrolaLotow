@@ -30,19 +30,24 @@ namespace KontrolaLotow
             //skl.SledzonySamolot(samolot);
             //skl.EkranObecnegoStanu();
 
-            SystemKontroliLotow skl3 = new SystemKontroliLotow();
+            //SystemKontroliLotow skl3 = new SystemKontroliLotow();
+            ISystemKontroliLotow systemKontroliLotow = new SystemKontroliLotow();
             Repozytorium repo3 = new Repozytorium();
             var miasto1 = repo3.WezMiasto("Gdańsk");
             var miasto2 = repo3.WezMiasto("Nowy York");
             var samolot3 = repo3.WezSamolot(200, 140);
             samolot3.MiastoWylot = miasto1;
             samolot3.MiastoCel = miasto2;
-            skl3.SledzonySamolot(samolot3);
-            skl3.EkranObecnegoStanu();
+            //skl3.SledzonySamolot(samolot3);
+            //skl3.EkranObecnegoStanu();
             var samolot4 = repo3.WezSamolot(miasto2 , 3000, 2500);
             samolot4.MiastoCel = miasto1;
-            skl3.SledzonySamolot(samolot4);
-            skl3.EkranObecnegoStanu();
+            systemKontroliLotow.ZarejestrujSamolot(samolot3);
+            systemKontroliLotow.PokazWidok(Widok.ListaSamolotów);
+            //skl3.SledzonySamolot(samolot4);
+            //skl3.EkranObecnegoStanu();
+            systemKontroliLotow.ZarejestrujSamolot(samolot4);
+            systemKontroliLotow.PokazWidok(Widok.ListaSamolotów);
 
             Console.ReadKey();
         }

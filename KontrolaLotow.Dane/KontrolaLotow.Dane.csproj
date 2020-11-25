@@ -50,8 +50,10 @@
     <Compile Include="Model\Samolot.cs" />
     <Compile Include="Model\Samoloty\SamolotPasazerski.cs" />
     <Compile Include="Model\Samoloty\SamolotTowarowy.cs" />
+    <Compile Include="Model\Widok.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\ISystemKontroliLotow.cs" />
     <Compile Include="System\Narzedzia.cs" />
     <Compile Include="System\SystemKontroliLotow.cs" />
   </ItemGroup>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace KontrolaLotow.Dane.Model
 {
 
-    public class Samolot
+    public abstract class Samolot
     {
         public Samolot(string identyfikator, float predkosc)
         {
@@ -31,14 +31,20 @@ namespace KontrolaLotow.Dane.Model
         public Polozenie Pozycja { get; private set; }
         public Miasto MiastoWylot { get; set; }
         public Miasto MiastoCel { get; set; }
-        public virtual string Rodzaj 
+        //public virtual string Rodzaj 
+        //{
+        //    get
+        //    {
+        //        return "S";
+        //    } 
+        //}
+        //public virtual string Ladunek() => "brak";
+
+        public abstract string Rodzaj
         {
-            get
-            {
-                return "S";
-            } 
+            get;
         }
-        public virtual string Ladunek() => "brak";
+        public abstract string Ladunek();
 
     }
 }
